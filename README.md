@@ -1,104 +1,105 @@
 # Azure & Microsoft Entra Security Portfolio
 
-Welcome to my hands-on security portfolio focused on **Microsoft Entra ID**, **Azure security**, and **identity governance**.
+This repository is my hands-on portfolio for building practical skills in **Microsoft Entra ID**, **Azure security**, **identity governance**, and **cloud security operations**.
 
-This repository documents practical lab projects I have built to strengthen real-world skills in **IAM**, **cloud security**, and **Microsoft security operations** while preparing for **AZ-500** and **SC-300**.
+The portfolio is structured as a progressive learning path across three phases:
 
-Rather than treating security as theory alone, these projects are designed around common business problems such as protecting privileged access, reducing standing permissions, reviewing stale access, and enabling secure self-service account recovery.
+- **Foundation**
+- **Intermediate**
+- **Advanced**
 
----
-
-## Portfolio Focus
-
-This portfolio is centered on the security controls that organizations commonly use to strengthen identity protection and cloud access management, including:
-
-- Conditional Access
-- Multi-Factor Authentication (MFA)
-- Privileged Identity Management (PIM)
-- Access Reviews
-- Authentication Methods Policy
-- Self-Service Password Reset (SSPR)
-- Registration Campaigns
-- Security validation through logs and audit evidence
+The goal is to move beyond theory and document security controls in a way that reflects how they solve real operational problems inside organizations.
 
 ---
 
-## Why This Portfolio Exists
+## Portfolio Purpose
 
-I built this portfolio to develop practical, demonstrable experience in the Microsoft security ecosystem.
+I built this portfolio to create practical evidence of my work in:
 
-My current focus is on:
+- **Azure security**
+- **Microsoft Entra ID**
+- **Identity and Access Management (IAM)**
+- **Identity governance**
+- **Cloud security administration**
 
-- **Microsoft Entra ID and Identity Security**
-- **Azure security administration**
-- **Identity governance and privileged access control**
-- **Hands-on lab validation and security documentation**
-
-The goal is to translate foundational learning into practical project evidence that is useful for security-focused roles, especially in **IAM**, **cloud security**, and **Microsoft security operations**.
+This work supports my progression toward **AZ-500** and **SC-300**, while helping me build a stronger project portfolio for Microsoft-focused security roles.
 
 ---
 
-## Lab Phases
-
-This repository is structured in progressive phases so that the work reflects a clear learning path rather than a collection of unrelated screenshots or notes.
+## Portfolio Roadmap
 
 ### 01 - Foundation
-Core labs focused on essential Microsoft Entra and Azure identity security controls.
+The Foundation phase focuses on core identity and access security controls that are widely used in real organizations.
 
-Current foundational labs include:
+This phase covers:
 
-1. **Conditional Access + MFA**
-2. **Privileged Identity Management (PIM)**
-3. **Access Reviews**
-4. **Authentication Methods + SSPR + Registration Campaign**
+- Conditional Access and MFA
+- Privileged Identity Management (PIM)
+- Access Reviews
+- Authentication Methods
+- Self-Service Password Reset (SSPR)
+- Registration Campaigns
+
+These labs are designed to build a strong base in identity protection, privileged access control, and secure user recovery.
 
 ### 02 - Intermediate
-This phase will expand into broader cloud security engineering and operational controls, including workload protection, secure secret handling, monitoring, and application identity security.
+The Intermediate phase is intended to expand from identity-focused controls into broader Azure and Microsoft security engineering scenarios.
+
+Planned areas in this phase include:
+
+- Key Vault and Managed Identity
+- Defender for Cloud workload protection
+- Logging, monitoring, and detection workflows
+- Secure storage and private access design
+- Application identity and permissions security
+
+This phase will focus more on operational cloud security and service-to-service trust.
 
 ### 03 - Advanced
-This phase will focus on more mature security scenarios such as architecture-driven controls, governance design, and end-to-end cloud security case studies.
+The Advanced phase will move toward more mature security design and investigation scenarios.
+
+Planned areas in this phase include:
+
+- Zero Trust-oriented identity architecture
+- Privileged access governance design
+- Identity incident investigation
+- End-to-end cloud security case studies
+- Policy-driven security design across Microsoft security controls
+
+This phase is intended to reflect more strategic and architecture-level security thinking.
 
 ---
 
-## Foundation Projects
+## Current Progress
+
+At present, the **Foundation phase** is the most developed part of this portfolio and contains the first completed set of hands-on projects.
+
+Current completed Foundation labs:
 
 | Project | Focus Area | Security Problem Addressed |
 |---|---|---|
-| 01 | Conditional Access + MFA | Protects privileged identities and reduces risky sign-ins |
+| 01 | Conditional Access + MFA | Protects privileged accounts and reduces risky sign-ins |
 | 02 | Privileged Identity Management | Reduces standing privilege through just-in-time access |
 | 03 | Access Reviews | Helps detect and remove unnecessary privileged access |
 | 04 | Authentication Methods + SSPR | Enables secure registration and self-service account recovery |
 
+Intermediate and Advanced sections are included intentionally so the portfolio can continue to grow in a structured way.
+
 ---
 
-## What Each Project Includes
+## How the Projects Are Documented
 
-Each lab folder is documented as a practical case study and typically includes:
+Each lab is documented as a practical case study and typically includes:
 
-- a short business problem statement
+- the business problem being addressed
 - the security objective of the lab
-- the Microsoft security controls used
+- the Microsoft technologies used
 - implementation steps
-- validation and testing evidence
+- validation and test evidence
 - selected screenshots
-- the practical value of the control in a real organization
+- the practical value of the control in a real-world environment
 
----
-
-## Current Direction
-
-I am currently building this portfolio as part of a focused pathway in:
-
-- **Azure security**
-- **Microsoft Entra ID**
-- **Identity and Access Management**
-- **Cloud security operations**
-
-Alongside this lab work, I am continuing my progression toward:
-
-- **SC-900** foundation knowledge
-- **AZ-500**
-- **SC-300**
+The aim is not only to complete labs, but to explain why each control matters and how it would be used in practice.
 
 ---
 
