@@ -1,4 +1,4 @@
-# Conditional Access and MFA for Identity Protections
+# Conditional Access and MFA for Identity Protection
 
 ## Overview
 
