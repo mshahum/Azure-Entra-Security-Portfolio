@@ -2,37 +2,31 @@
 
 ## Overview
 
-This project focused on improving identity resilience in Microsoft Entra ID by implementing **Self-Service Password Reset (SSPR)** for a controlled pilot group, enabling secure recovery methods, and validating the end-user password reset experience through audit evidence.
+This project focused on improving identity resilience in Microsoft Entra ID by implementing **Self-Service Password Reset (SSPR)** for a controlled pilot group, enabling secure recovery methods, and validating the end user password reset experience through audit evidence.
 
-Rather than treating password reset as a routine helpdesk function, this lab approached it as an important identity security control. A well-designed SSPR rollout reduces dependency on manual support, shortens account recovery time, and gives users a secure way to regain access without weakening authentication standards.
+Rather than treating password reset as a routine helpdesk function, this lab approached it as an important identity security control. A well designed SSPR rollout reduces dependency on manual support, shortens account recovery time, and gives users a secure way to regain access without weakening authentication standards.
 
 The lab was built around a practical security objective: enabling password reset for a defined group of users, requiring stronger recovery methods, encouraging modern authentication registration, and confirming that the reset workflow completed successfully.
 
----
+## Business Problem
 
-## Business Context
-
-Password-related lockouts are one of the most common operational issues in real environments. When users cannot regain access quickly, productivity is interrupted and support teams absorb avoidable workload. At the same time, poorly designed reset processes can introduce security risk if recovery methods are weak, overly broad, or difficult to audit.
+Password related lockouts are one of the most common operational issues in real environments. When users cannot regain access quickly, productivity is interrupted and support teams absorb avoidable workload. At the same time, poorly designed reset processes can introduce security risk if recovery methods are weak, overly broad, or difficult to audit.
 
 Organizations therefore need more than a basic password reset feature. They need a controlled rollout model, secure recovery methods, and clear visibility into what happened during the reset process.
 
-This project addresses those needs by implementing SSPR in a way that reflects both **security discipline** and **operational practicality**.
-
----
+This project addressed those needs by implementing SSPR in a way that reflected both **security discipline** and **operational practicality**.
 
 ## Project Objectives
 
 The objectives of this lab were to:
 
-- enable Self-Service Password Reset for a defined pilot group
+- enable Self Service Password Reset for a defined pilot group
 - configure secure authentication methods to support password recovery
 - enable Microsoft Authenticator as a modern recovery option
 - enable SMS as a backup recovery method
 - use a registration campaign to encourage method enrollment
-- validate the end-user reset experience from registration through successful password recovery
+- test the end-user reset experience
 - confirm reset activity through audit logs
-
----
 
 ## Technologies Used
 
@@ -45,49 +39,33 @@ The objectives of this lab were to:
 - Microsoft Entra Groups
 - Audit Logs
 
----
-
 ## What Was Implemented
 
 ### Pilot Group for Controlled Rollout
 
 A dedicated group was created and populated with pilot users for the SSPR rollout. This allowed the feature to be introduced in a scoped and manageable way rather than enabling it broadly across the tenant from the start.
 
-This is important in real environments because identity controls should be tested with a limited audience before wider deployment.
+### Self Service Password Reset Policy
 
-### Self-Service Password Reset Policy
-
-SSPR was enabled for the selected pilot group through the password reset policy. This ensured that only the intended users could perform self-service recovery, while the environment remained controlled and easier to validate.
-
-The configuration demonstrated how password reset can be introduced gradually without affecting every user at once.
+SSPR was enabled for the selected pilot group. This ensured that only the intended users could perform self service recovery while the environment remained controlled and easier to validate.
 
 ### Authentication Methods for Recovery
 
-To support secure recovery, authentication methods were configured for the pilot group.
+Microsoft Authenticator was enabled for the pilot group as a stronger and more modern recovery method. SMS was also enabled as a backup recovery option to provide additional resilience where needed.
 
-**Microsoft Authenticator** was enabled as a modern recovery method to strengthen the reset process and align with stronger identity verification practices.
-
-**SMS** was also enabled as a backup method to provide an additional recovery path where appropriate.
-
-Together, these settings reflected a more realistic design: primary reliance on a stronger modern method, with a secondary method available for resilience.
+Together, these settings reflected a practical balance between stronger authentication and operational flexibility.
 
 ### Registration Campaign
 
 A registration campaign was configured to target the pilot group and prompt users to register Microsoft Authenticator. This added an important operational layer to the lab, because secure recovery depends not only on policy configuration but also on successful user enrollment.
 
-The campaign demonstrated how organizations can drive adoption of stronger authentication methods without relying entirely on manual user communication.
-
-### End-User Password Reset Validation
+### End User Reset Validation
 
 The reset workflow was tested from the user perspective. This included the method registration prompt, verification through the configured recovery option, and successful password reset completion.
 
-This stage was essential because it showed that the design worked not only in the administrator view, but also in the actual user experience.
-
 ### Audit and Evidence Review
 
-Finally, audit logs were reviewed to confirm that the password reset activity completed successfully. This provided administrative proof of the reset workflow and demonstrated the importance of visibility, traceability, and validation in identity operations.
-
----
+Finally, audit logs were reviewed to confirm that the password reset activity completed successfully. This provided administrative proof of the workflow and demonstrated the importance of visibility, traceability, and validation in identity operations.
 
 ## Validation and Testing
 
@@ -100,12 +78,16 @@ Validation included:
 - reviewing Microsoft Authenticator targeting for the pilot group
 - reviewing SMS targeting as a backup recovery method
 - confirming that the registration campaign targeted the correct group
-- testing the end-user password reset experience
+- testing the end user password reset experience
 - validating successful reset activity through audit logs
 
 This approach reflects a stronger operational workflow: **configure, target, test, validate, and then expand with confidence**.
 
----
+## Real World Use Case
+
+In a real organization, this type of implementation would reduce helpdesk dependency for common account recovery issues while still ensuring that users can only reset passwords through approved and properly registered methods.
+
+It provides a more resilient recovery process without weakening identity assurance.
 
 ## Why This Matters in Practice
 
@@ -121,58 +103,39 @@ Finally, audit visibility matters. Security teams need evidence that the process
 
 Together, these controls support a more mature identity protection and user recovery model.
 
----
+## Implementation Evidence
 
-## Key Screenshots
+### Pilot group membership for SSPR rollout
+<img width="3200" height="1736" alt="01-sspr-pilot-group-members" src="https://github.com/user-attachments/assets/9b41a464-ffd3-4046-bdef-ea010f89f6d8" />
 
-### 1. Pilot Group Membership for SSPR Rollout
-Shows the dedicated pilot group used to scope the SSPR deployment.
+### SSPR enabled for the pilot group
+<img width="3200" height="1730" alt="02-sspr-enabled-for-pilot-group" src="https://github.com/user-attachments/assets/17650ab2-28cf-42be-993f-810b8b089d6f" />
 
-<img width="3200" height="1736" alt="01-sspr-pilot-group-members" src="https://github.com/user-attachments/assets/97e331ac-789a-4a36-ada3-cdcb9997dc73" />
+### Microsoft Authenticator enabled for the pilot group
+<img width="3200" height="1730" alt="03-microsoft-authenticator-enabled-for-pilot-group" src="https://github.com/user-attachments/assets/1e90ffa7-5d9e-4ba0-8827-8e573e00b869" />
 
-### 2. SSPR Enabled for the Pilot Group
-Shows that self-service password reset was enabled only for the selected pilot group.
+### SMS enabled as backup recovery method
+<img width="3200" height="1730" alt="04-sms-enabled-as-backup-recovery-method" src="https://github.com/user-attachments/assets/5bba7ca3-8f1f-436d-8706-f2bab4cd5fc4" />
 
-<img width="3200" height="1730" alt="02-sspr-enabled-for-pilot-group" src="https://github.com/user-attachments/assets/ba08af3a-f316-4a4e-abd8-669bbbdd9a86" />
+### Registration campaign targeted to the pilot group
+<img width="3200" height="1728" alt="06-registration-campaign-targeted-to-pilot-group" src="https://github.com/user-attachments/assets/535cf184-22ec-4638-99e5-c8a1036c5a4d" />
 
-### 3. Microsoft Authenticator Enabled for the Pilot Group
-Shows Microsoft Authenticator configured as a recovery method for the pilot users.
-
-<img width="3200" height="1730" alt="03-microsoft-authenticator-enabled-for-pilot-group" src="https://github.com/user-attachments/assets/f58ca4b2-18d8-4c53-90b8-9f69ce0d66ba" />
-
-### 4. SMS Enabled as Backup Recovery Method
-Shows SMS configured as a secondary recovery option for the same pilot group.
-
-<img width="3200" height="1730" alt="04-sms-enabled-as-backup-recovery-method" src="https://github.com/user-attachments/assets/f9ef2017-c1e3-410c-bc51-5d6c44015996" />
-
-### 5. Registration Campaign Targeted to the Pilot Group
-Shows the registration campaign configuration used to encourage enrollment in modern authentication methods.
-
-<img width="3200" height="1728" alt="06-registration-campaign-targeted-to-pilot-group" src="https://github.com/user-attachments/assets/d1d7675e-70e1-4781-b84f-1026fcace992" />
-
-### 6. Audit Log Showing Successful Password Reset Activity
-Shows the audit evidence confirming that the password reset workflow completed successfully.
-
-<img width="3200" height="1726" alt="10-sspr-audit-log-password-reset-success" src="https://github.com/user-attachments/assets/c3bea664-b25c-422f-8b98-0878a401ad95" />
-
----
+### Audit log showing successful password reset activity
+<img width="3200" height="1726" alt="10-sspr-audit-log-password-reset-success" src="https://github.com/user-attachments/assets/71bb5375-6b97-4eae-b9ba-be016f7ee980" />
 
 ## Skills Demonstrated
 
-- Self-Service Password Reset deployment
+- Self Service Password Reset deployment
 - scoped identity rollout using pilot groups
 - authentication methods policy configuration
 - Microsoft Authenticator targeting
 - SMS recovery method configuration
 - registration campaign planning
-- end-user identity recovery validation
 - audit log interpretation and evidence review
 - operational identity security design
 
----
+## Security Outcome
 
-## Outcome
+This implementation improved identity resilience by enabling a controlled self service recovery process backed by stronger verification methods and clear audit evidence.
 
-This project demonstrated how Microsoft Entra ID can be used to deliver a more secure and operationally effective password recovery process through **Self-Service Password Reset**, **modern authentication method targeting**, and **controlled user onboarding**.
-
-It also showed the value of combining policy configuration with user registration strategy and audit validation, which is critical when deploying identity features in a real environment.
+The result was a more secure and operationally effective password reset model that reduced support dependency while preserving recovery assurance.
