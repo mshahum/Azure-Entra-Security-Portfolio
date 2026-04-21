@@ -1,31 +1,32 @@
 # Access Reviews for Privileged Group Governance
 
 ## Overview
-This project focused on strengthening identity governance in Microsoft Entra ID by designing and validating an access review process for a privileged administrative group.
 
-The lab was built around a practical security objective: ensuring that privileged group membership is reviewed on a recurring basis so that access remains limited to users who still have a valid business need.
+This project focused on strengthening identity governance in Microsoft Entra ID through the design, execution, and validation of an Access Review workflow for privileged group membership. The lab was built around a practical governance objective: ensuring that privileged group membership is reviewed on a recurring basis so that access remains limited to users who still have a valid business need.
 
-Rather than treating access reviews as a compliance checkbox, this project approached them as an operational security control that helps reduce privilege creep, improve accountability, and support stronger governance over sensitive identities.
+Rather than treating Access Reviews as a compliance formality, this project approached them as an operational security control. In real environments, privileged access often accumulates over time. Without regular review, group membership can become outdated, excessive, or risky. This lab demonstrated how Microsoft Entra ID Access Reviews can be used to enforce accountability, support least privilege, and improve long term control over privileged access.
 
-## Business Context
-Privileged access is one of the highest-risk areas in any identity environment. Even when strong controls such as Conditional Access, multifactor authentication, and Privileged Identity Management are in place, access can still become excessive over time if it is not reviewed regularly.
+## Business Problem
 
-Users may change responsibilities, move to different teams, or retain access that is no longer justified. If privileged memberships are left unchecked, organizations create unnecessary exposure and weaken the principle of least privilege.
+Excess access is one of the most common weaknesses in identity governance. Users may retain privileged access long after their responsibilities have changed, especially when permissions are assigned through groups and not revisited on a regular basis. Over time, this creates unnecessary risk, weakens internal control, and increases the impact of account compromise or misuse.
 
-Access reviews help address this problem by introducing a structured process for validating whether elevated access should still be retained. In practice, this allows security teams to move from one-time access assignment toward ongoing access governance.
+Privileged groups require special attention because they often grant indirect access to high value roles, sensitive administrative actions, or broader control across the environment. If group membership is not reviewed periodically, organizations lose confidence that access remains justified.
 
-This project demonstrates that process by reviewing a privileged admin group, assigning a reviewer, configuring recurring review settings, and validating the review lifecycle from creation through final decision.
+This project addressed that challenge by creating a recurring access review for a privileged administrative group, assigning a reviewer, configuring review logic and notifications, validating the reviewer experience in the My Access portal, and confirming final approved outcomes inside Microsoft Entra ID.
 
 ## Project Objectives
+
 The objectives of this lab were to:
 
 - create an access review for a privileged administrative group
 - assign a reviewer responsible for validating group membership
-- configure recurring review settings and governance options
-- validate the reviewer experience through the My Access portal
-- confirm that review decisions were recorded successfully in Microsoft Entra ID
+- configure recurrence, duration, notifications, and decision settings
+- test the reviewer-side experience in the My Access portal
+- validate review outcomes before and after reviewer action
+- demonstrate how Access Reviews support stronger identity governance
 
 ## Technologies Used
+
 - Microsoft Entra ID
 - Identity Governance
 - Access Reviews
@@ -35,93 +36,86 @@ The objectives of this lab were to:
 ## What Was Implemented
 
 ### Access Review for a Privileged Group
-An access review was created for a privileged administrative group to ensure that membership could be reviewed on a recurring basis rather than remaining unchecked over time.
 
-This is important because privileged groups often provide indirect access to highly sensitive roles, permissions, or administrative capabilities. Reviewing those memberships helps reduce standing risk and strengthens governance over elevated access.
+An access review was created for the **GRP-Privileged-Admins** group. This established a structured governance process to verify whether existing members should continue to retain access.
 
-### Reviewer Assignment and Review Scheduling
-The review was configured with a designated reviewer and a recurring schedule. This ensured that the review process was not a one-time event, but part of an ongoing governance cycle.
+### Reviewer and Recurrence Configuration
 
-This kind of configuration reflects real operational practice, where access decisions should be revisited periodically rather than assumed to remain valid indefinitely.
+A designated reviewer was selected, and the review was configured with a defined review duration and monthly recurrence. This reflects how real organizations operationalize governance as a repeated control rather than a one time manual check.
 
-### Governance and Decision Settings
-Additional review settings were configured to support more structured governance, including decision guidance and review behavior options.
+### Decision and Notification Settings
 
-These settings matter because they shape how consistently access reviews are performed and how much administrative confidence exists in the review outcomes.
+The review was configured with decision helpers, justification requirements, notifications, and reminders. These settings matter because an access review is only effective when it is usable, consistent, and auditable.
 
-### Reviewer-Side Validation
-The review was then validated from the reviewer perspective through the My Access portal. This step confirmed that the assigned reviewer could see the review, evaluate the listed group members, and perform approval actions as expected.
+### Reviewer Validation Through My Access
 
-Testing from the reviewer side is important because it verifies that the review is not only configured correctly in the admin center, but is also operationally usable by the person responsible for the decision.
+The review was tested from the reviewer perspective through the My Access portal. This demonstrated how a reviewer sees recommendations, evaluates members, and records decisions.
 
-### Outcome Validation
-After the review was completed, the results were checked in Microsoft Entra ID to confirm that review decisions were recorded successfully.
+### Result Validation
 
-This completed the full lifecycle of the lab: creation, configuration, activation, reviewer action, and final result validation.
+The review was validated both before and after reviewer action. This helped confirm the full lifecycle of the review, from creation to completion and final approved outcomes.
 
 ## Validation and Testing
-The lab was validated through a structured sequence of checks:
 
-- confirming that the access review appeared in Microsoft Entra ID after creation
+The review was validated through a complete governance workflow rather than configuration alone.
+
+Validation included:
+
+- confirming the access review appeared in Microsoft Entra ID after creation
 - reviewing the configured reviewer and recurrence settings
-- verifying that the access review became active
-- validating the reviewer experience in the My Access portal
-- confirming that final review decisions were captured successfully in the results view
+- validating that the access review became active
+- testing the reviewer experience in the My Access portal
+- confirming approved outcomes after reviewer action
+- validating the final completed review summary
 
-This approach reflects a realistic governance workflow: define the review scope, assign accountability, execute the review, and verify the recorded outcome.
+This reflects a realistic governance process: create, configure, activate, review, validate, and document.
+
+## Real World Use Case
+
+In a real organization, this type of review would be used to prevent privileged group membership from quietly remaining in place after a role change, project handoff, or shift in operational responsibility.
+
+It provides a repeatable way to challenge whether elevated access is still appropriate rather than assuming it should continue indefinitely.
 
 ## Why This Matters in Practice
-This lab reflects several identity governance realities that matter in real organizations.
 
-First, privileged access should not remain trusted indefinitely. Even when access was originally justified, that does not mean it should continue forever without review.
+This lab reflects several governance realities that matter in production environments.
 
-Second, governance controls are most effective when they are repeatable. A recurring access review process creates a structured mechanism for checking whether sensitive access is still appropriate over time.
+First, privileged access should never remain in place indefinitely without review. Even if access was originally justified, that does not mean it should continue forever without revalidation.
 
-Third, access governance is not only about technical configuration. It also depends on decision ownership, reviewer accountability, and evidence that reviews were actually completed.
+Second, group based administration is efficient, but it can also hide stale privilege when governance controls are weak. Access Reviews restore visibility and accountability.
 
-Together, these practices support stronger least-privilege enforcement, improved audit readiness, and a more disciplined identity security posture.
+Third, strong identity protection is not only about authentication and signin controls. It is also about continuously verifying who should have access in the first place. Access Reviews complement other security controls by reducing unnecessary standing privilege over time.
 
-## Key Screenshots
+Together, these practices support a more disciplined, auditable, and defensible identity governance model.
 
-### 1. Access Review Listed After Creation
-This screenshot shows the newly created access review for the privileged admin group.
+## Implementation Evidence
 
-<img width="1918" height="943" alt="02-access-review-list-created-review" src="https://github.com/user-attachments/assets/cbe0de6e-8110-4599-9f70-6d81615b1e56" />
+### Access review listed after creation
+<img width="1918" height="943" alt="02-access-review-list-created-review" src="https://github.com/user-attachments/assets/f6280b85-6920-4d0e-bfce-281c30dd967a" />
 
-### 2. Reviewer and Recurrence Settings
-This screenshot shows the reviewer assignment, review duration, and recurring schedule for the privileged group review.
+### Reviewer and recurrence settings
+<img width="1919" height="943" alt="03-access-review-reviewer-and-recurrence-settings" src="https://github.com/user-attachments/assets/7b786f1a-4e92-4c66-bcb2-47f84a85ff41" />
 
-<img width="1919" height="943" alt="03-access-review-reviewer-and-recurrence-settings" src="https://github.com/user-attachments/assets/be911665-ca28-47ea-a9fa-9d1de4bbe264" />
+### Active review overview
+<img width="1917" height="942" alt="06-access-review-overview-active-review" src="https://github.com/user-attachments/assets/d82b64ea-b0ec-4350-8640-588dc10198f3" />
 
-### 3. Active Review Overview
-This screenshot shows the access review after activation, including the review scope and governance details.
+### Review performed by Security Admin
+<img width="1913" height="989" alt="08-access-review-performed-by-security-admin" src="https://github.com/user-attachments/assets/00e52bdd-e99f-4b03-ab21-607dea4ebb1a" />
 
-<img width="1917" height="942" alt="06-access-review-overview-active-review" src="https://github.com/user-attachments/assets/3e9c15e2-a764-470b-947b-17e8a2594f11" />
-
-
-### 4. Review Performed by Security Admin
-This screenshot shows the reviewer-side experience in the My Access portal, where the assigned reviewer evaluates privileged group membership.
-
-<img width="1913" height="989" alt="08-access-review-performed-by-security-admin" src="https://github.com/user-attachments/assets/f8de7e24-715a-407f-b963-8ea461fa4674" />
-
-
-### 5. Results After Reviewer Decision
-This screenshot shows the final approved outcomes after the reviewer completed the access review.
-
-<img width="1918" height="945" alt="09-access-review-results-after-decision" src="https://github.com/user-attachments/assets/ed1c625c-6c83-4da9-b3ee-72f2379bea14" />
-
+### Results after reviewer decision
+<img width="1918" height="945" alt="09-access-review-results-after-decision" src="https://github.com/user-attachments/assets/33093196-44e9-4cc7-b631-efa64ca6c0cb" />
 
 ## Skills Demonstrated
+
 - identity governance configuration
 - access review design for privileged groups
 - reviewer assignment and recurring review scheduling
-- governance-oriented access validation
+- governance oriented access validation
 - reviewer workflow testing through My Access
 - interpretation of review results in Microsoft Entra ID
 
-## Outcome
-This project demonstrated how Microsoft Entra ID Access Reviews can be used to strengthen governance over privileged group membership through structured, recurring validation.
+## Security Outcome
 
-It showed how a privileged group review can be created, assigned, tested, and completed in a way that supports least-privilege principles and improves long-term control over sensitive access.
+This implementation introduced a structured, recurring governance process for privileged group membership and reduced the risk of stale elevated access remaining in place without validation.
 
-More broadly, the lab highlights that strong identity security is not only about granting and protecting access, but also about reviewing access continuously to ensure it remains justified.
+The result was stronger accountability, clearer reviewer ownership, and more defensible control over sensitive group based privilege.
