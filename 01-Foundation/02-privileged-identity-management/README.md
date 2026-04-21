@@ -98,7 +98,7 @@ Together, these controls support a more mature least-privilege model and a stron
 
 ## Key Screenshots
 
-The following screenshots should be placed in the main README because they tell the clearest story without overwhelming the page:
+The following screenshots in the main README demonstrate the clearest story without overwhelming the page:
 
 ### 1. PIM overview for Entra roles
 
