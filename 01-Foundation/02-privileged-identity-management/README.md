@@ -98,8 +98,6 @@ Together, these controls support a more mature least-privilege model and a stron
 
 ## Key Screenshots
 
-The following screenshots in the main README demonstrate the clearest story without overwhelming the page:
-
 ### 1. PIM overview for Entra roles
 
 <img width="3200" height="1530" alt="01-pim-control-plane-overview" src="https://github.com/user-attachments/assets/e7d1bf9c-9929-487d-94df-42528545ea1b" />
