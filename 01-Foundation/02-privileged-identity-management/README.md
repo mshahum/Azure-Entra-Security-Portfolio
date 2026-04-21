@@ -132,15 +132,6 @@ The following screenshots in the main README demonstrate the clearest story with
 
 <img width="1919" height="947" alt="10-contributor-role-activated-on-resource-group" src="https://github.com/user-attachments/assets/61cfc610-446b-4536-b0cb-951160c5093f" />
 
-## Additional Supporting Screenshots
-
-These screenshots are useful and should remain in the `screenshots` folder even if they are not displayed in the main README:
-
-- `05-pim-azure-resources-overview.png`
-- `08-pim-user-eligible-contributor-assignment.png`
-
-They add supporting evidence, but they are not as strong visually as the main set above.
-
 ## Skills Demonstrated
 
 - Privileged Identity Management configuration
