@@ -65,3 +65,14 @@ Across these projects, the Foundation phase demonstrates:
 The Foundation phase establishes a practical base in Microsoft identity security by showing how key controls can be configured, tested, and documented in a real administrative workflow.
 
 It is designed to support progression into more advanced Azure and Microsoft security engineering work in later phases of the portfolio.
+
+## Repository Structure
+
+```text
+Azure-Entra-Security-Portfolio/
+├── README.md
+├── 01-Foundation/
+│   ├── 01-conditional-access-mfa/
+│   ├── 02-privileged-identity-management/
+│   ├── 03-access-reviews/
+│   └── 04-authentication-methods-sspr-registration/
