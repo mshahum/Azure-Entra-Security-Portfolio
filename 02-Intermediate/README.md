@@ -25,11 +25,11 @@ These are practical Azure security controls used in real environments to reduce 
 
 ### 1. Key Vault + Managed Identity
 
-This project focused on securing secret access by using Azure Key Vault with Managed Identity, reducing the need for hardcoded credentials and demonstrating identity-based access to sensitive values.
+This project focused on securing secret access by using Azure Key Vault with Managed Identity, reducing the need for hardcoded credentials and demonstrating identity based access to sensitive values.
 
 ### 2. Azure RBAC + Least Privilege
 
-This project focused on implementing least privilege access by assigning Azure roles at controlled scopes and validating the difference between read-only and contributor-level permissions.
+This project focused on implementing least privilege access by assigning Azure roles at controlled scopes and validating the difference between read-only and contributor level permissions.
 
 ### 3. Network Security Group Restricted SSH Access
 
@@ -49,7 +49,7 @@ This project focused on centralizing Azure Activity Logs into a Log Analytics wo
 
 ### 7. Azure Policy Governance
 
-This project focused on enforcing cloud governance by requiring an ownership tag at a controlled resource group scope and validating policy behavior against compliant and non-compliant deployments.
+This project focused on enforcing cloud governance by requiring an ownership tag at a controlled resource group scope and validating policy behavior against compliant and non compliant deployments.
 
 ### 8. Private Endpoint for Secure Storage Access
 
@@ -75,17 +75,17 @@ This progression reflects practical cloud security thinking. Secure Azure enviro
 Across these projects, this phase demonstrates:
 
 - Azure resource security implementation
-- identity-based access control
+- identity based access control
 - least privilege design
 - secure secret management
 - network security rule configuration
 - storage account hardening
 - security alerting and notification
 - centralized activity log collection
-- KQL-based validation
+- KQL based validation
 - Azure Policy governance
 - private endpoint and private DNS configuration
-- evidence-based validation of security controls
+- evidence based validation of security controls
 - professional documentation of cloud security work
 
 ## Outcome
