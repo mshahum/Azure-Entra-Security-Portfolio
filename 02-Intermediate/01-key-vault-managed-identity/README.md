@@ -132,37 +132,37 @@ By using Managed Identity and Key Vault together, organizations can reduce the r
 
 The Azure Key Vault was successfully deployed as the secure location for storing sensitive secrets.
 
-
+<img width="3194" height="1732" alt="02-key-vault-deployment-completed" src="https://github.com/user-attachments/assets/4e16ebfa-16f0-499e-9cfa-93cb8b3ef29f" />
 
 ### DbPassword secret created in Azure Key Vault
 
 A secret named `DbPassword` was created inside Azure Key Vault to represent a sensitive application or database credential.
 
-![DbPassword secret created in Azure Key Vault](screenshots/04-key-vault-secret-dbpassword-created.png)
+<img width="3200" height="1730" alt="04-key-vault-secret-dbpassword-created" src="https://github.com/user-attachments/assets/9115a4e1-ec63-4f98-90d8-47c43a3ee5d3" />
 
 ### System assigned Managed Identity enabled on the virtual machine
 
 A system assigned Managed Identity was enabled on the VM so the workload could authenticate to Azure without stored credentials.
 
-![System assigned Managed Identity enabled on the virtual machine](screenshots/06-vm-system-assigned-managed-identity-enabled.png)
+<img width="3200" height="1728" alt="06-vm-system-assigned-managed-identity-enabled" src="https://github.com/user-attachments/assets/e8de8f8c-0058-4eb9-aa3f-a554c16c714d" />
 
 ### Key Vault Secrets User role assigned to the VM managed identity
 
 The VM managed identity was assigned the `Key Vault Secrets User` role, allowing it to read secrets from the Key Vault without broader administrative permissions.
 
-![Key Vault Secrets User role assigned to the VM managed identity](screenshots/07-key-vault-secrets-user-assigned-to-vm-managed-identity.png)
+<img width="3190" height="1440" alt="07-key-vault-secrets-user-assigned-to-vm-managed-identity" src="https://github.com/user-attachments/assets/aefb945b-2c92-4953-a0be-a797a19ce6f6" />
 
 ### Key Vault secret retrieved from the VM using Managed Identity
 
 The VM authenticated using Managed Identity and successfully retrieved the Key Vault secret through Azure CLI. The secret value was redacted before documentation.
 
-![Key Vault secret retrieved from the VM using Managed Identity](screenshots/09-vm-managed-identity-retrieves-key-vault-secret.png)
+<img width="2556" height="1182" alt="09-vm-managed-identity-retrieves-key-vault-secret" src="https://github.com/user-attachments/assets/f426465f-8c1f-4e0c-9c3a-bce8ed677b1e" />
 
 ### Key Vault Activity Log reviewed for role assignment and update evidence
 
 The Key Vault Activity Log provided audit evidence of role assignment and update events related to the lab configuration.
 
-![Key Vault Activity Log reviewed for role assignment and update evidence](screenshots/10-key-vault-activity-log-role-assignment-events.png)
+<img width="3200" height="1360" alt="10-key-vault-activity-log-role-assignment-events" src="https://github.com/user-attachments/assets/5f10bc4e-46f0-4d9b-a1a8-f800d25423f1" />
 
 ## Skills Demonstrated
 
