@@ -1,0 +1,12 @@
+SigninLogs
+| where TimeGenerated > ago(24h)
+| where ResultType != 0
+| summarize
+    FailedAttempts = count(),
+    FirstAttempt = min(TimeGenerated),
+    LastAttempt = max(TimeGenerated),
+    Applications = make_set(AppDisplayName, 5),
+    FailureReasons = make_set(ResultDescription, 5)
+    by UserDisplayName, TimeWindow = bin(TimeGenerated, 15m)
+| where FailedAttempts >= 3
+| sort by FailedAttempts desc, LastAttempt desc

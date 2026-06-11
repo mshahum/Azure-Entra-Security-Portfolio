@@ -1,0 +1,17 @@
+let PrivilegedAccountMonitor = dynamic(["Security Admin"]);
+ SigninLogs
+ | where TimeGenerated > ago(24h) 
+ | where UserDisplayName in (PrivilegedAccountMonitor)
+ | summarize 
+ SignInEvents = count(),
+ SuccessfulSignins = countif(ResultType == 0),
+ FailedOrInterruptedSignIns = countif(ResultType != 0),
+ FirstSignin = min(TimeGenerated),
+ LastSignin = max(TimeGenerated),
+ ConditionalAccessResults = make_set(tostring(ConditionalAccessStatus), 5),
+ SignedinApplications = make_set(AppDisplayName, 5),
+ ResultDescription = make_set(ResultDescription, 5)
+ by UserDisplayName
+ | sort by LastSignin desc 
+
+ 

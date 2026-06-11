@@ -1,0 +1,5 @@
+SigninLogs
+| where TimeGenerated > ago(24h)
+| sort by TimeGenerated desc
+| project TimeGenerated, UserDisplayName, AppDisplayName, ResultType, ResultDescription, ConditionalAccessStatus
+| take 20

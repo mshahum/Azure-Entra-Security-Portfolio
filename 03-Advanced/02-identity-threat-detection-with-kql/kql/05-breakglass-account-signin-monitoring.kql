@@ -1,0 +1,16 @@
+let EmergencyAccount = dynamic(["Break Glass Admin"]);
+SigninLogs
+| where  TimeGenerated > ago(24h)
+| where UserDisplayName in (EmergencyAccount)
+| summarize 
+SignInEvents = count(),
+SuccessfulSignIn = countif(ResultType == 0),
+FailedOrInterruptSignIn = countif(ResultType != 0),
+FirstSignIn = min(TimeGenerated),
+LastSignIn = max(TimeGenerated),
+SuccessfulApplication = make_set(AppDisplayName, 5),
+ConditionalAccessStatus = make_set(tostring(ConditionalAccessStatus), 5),
+ResultDescription = make_set(ResultDescription, 5)
+by UserDisplayName
+| extend AlertPriority = "High - Break Glass Admin required review"
+| sort by LastSignIn desc 

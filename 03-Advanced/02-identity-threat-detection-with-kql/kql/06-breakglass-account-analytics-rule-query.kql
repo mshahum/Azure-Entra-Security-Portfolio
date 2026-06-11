@@ -1,0 +1,17 @@
+let BreakGlassAccountsMonitor = dynamic(["Break Glass Admin"]);
+SigninLogs
+| where TimeGenerated > ago(24h)
+| where UserDisplayName in (BreakGlassAccountsMonitor)
+| summarize
+    TimeGenerated = max(TimeGenerated),
+    SignInEvents = count(),
+    SuccessfulSignIns = countif(ResultType == 0),
+    FailedOrInterruptedSignIns = countif(ResultType != 0),
+    FirstSignIn = min(TimeGenerated),
+    LastSignIn = max(TimeGenerated),
+    Applications = make_set(AppDisplayName, 5),
+    ConditionalAccessResults = make_set(tostring(ConditionalAccessStatus), 5),
+    ResultDescriptions = make_set(ResultDescription, 5)
+    by UserDisplayName
+| extend DetectionPriority = "High - break-glass account activity requires review"
+| sort by LastSignIn desc

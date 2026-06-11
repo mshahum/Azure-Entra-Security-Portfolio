@@ -1,0 +1,37 @@
+let PasswordFailures =
+    SigninLogs
+    | where TimeGenerated > ago(3h)
+    | where UserDisplayName == "Help Desk User"
+    | where ResultType == 50126
+    | summarize
+        FailedCount = count(),
+        FirstFailure = min(TimeGenerated),
+        LastFailure = max(TimeGenerated),
+        FailureReasons = make_set(ResultDescription, 5)
+        by UserDisplayName, UserId;
+let SuccessfulSignins =
+    SigninLogs
+    | where TimeGenerated > ago(3h)
+    | where UserDisplayName == "Help Desk User"
+    | where ResultType == 0
+    | project
+        UserDisplayName,
+        UserId,
+        SuccessfulSignInTime = TimeGenerated,
+        SuccessfulApp = AppDisplayName,
+        ConditionalAccessStatus;
+PasswordFailures
+| where FailedCount >= 3
+| join kind=inner SuccessfulSignins on UserId
+| where SuccessfulSignInTime > LastFailure
+| where SuccessfulSignInTime <= LastFailure + 30m
+| project
+    UserDisplayName,
+    FailedCount,
+    FirstFailure,
+    LastFailure,
+    SuccessfulSignInTime,
+    SuccessfulApp,
+    ConditionalAccessStatus,
+    FailureReasons
+| sort by SuccessfulSignInTime asc
