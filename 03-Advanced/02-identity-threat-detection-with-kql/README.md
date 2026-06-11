@@ -170,37 +170,38 @@ This lab demonstrates the practical skill of turning signin logs into useful det
 
 The `SigninLogs` table was queried to confirm that Microsoft Entra sign-in data was available in the Sentinel workspace.
 
-<img width="3198" height="1718" alt="01-signinlogs-baseline-validation" src="https://github.com/user-attachments/assets/845f777d-2125-47f8-bd75-8a36d7b0c333" />
+<img width="3198" height="1718" alt="01-signinlogs-baseline-validation" src="https://github.com/user-attachments/assets/82f3a3ff-ea68-4529-a4a6-6779db90bd46" />
+
 
 ### Failed Sign-in Burst Detection
 
 A KQL query was used to detect multiple failed signins within a 15-minute window.
 
-<img width="3200" height="1702" alt="03-failed-signin-burst-query-results" src="https://github.com/user-attachments/assets/93848b00-a2f7-4f95-a887-85ce061e6340" />
+<img width="3200" height="1702" alt="02-failed-signin-burst-query-results" src="https://github.com/user-attachments/assets/8832d8a8-cc6c-4387-9c40-a707864b713e" />
 
 ### Successful Signin After Failed Attempts
 
 A correlation query was used to identify a successful signin after repeated failed password attempts.
 
-<img width="3200" height="1702" alt="03-failed-signin-burst-query-results" src="https://github.com/user-attachments/assets/31399bb0-1b1c-4d85-9af3-dd48a3a74dd1" />
+<img width="1919" height="896" alt="03-success-after-failed-signins-query-results" src="https://github.com/user-attachments/assets/1ad1d59c-97f1-441e-bc9b-27351c43a468" />
 
 ### Privileged Account Signin Monitoring
 
 A privileged account monitoring query summarized signin activity for an administrative account.
 
-<img width="3196" height="1704" alt="05-admin-account-signin-query-results" src="https://github.com/user-attachments/assets/5996e924-a2a5-4f4d-9abc-911bdd8e344c" />
+<img width="3196" height="1704" alt="04-admin-account-signin-query-results" src="https://github.com/user-attachments/assets/33adaa68-20e4-4739-be55-eac569c0d736" />
 
 ### Break-glass Account Signin Monitoring
 
 A break glass account query identified activity from an emergency access account and marked it as high priority for review.
 
-<img width="3200" height="1698" alt="06-breakglass-account-signin-query-results" src="https://github.com/user-attachments/assets/23de569f-0238-4643-97ee-32e1954000c4" />
+<img width="3200" height="1698" alt="05-breakglass-account-signin-query-results" src="https://github.com/user-attachments/assets/3ffba9dd-b434-433c-af97-2a332c224c83" />
 
 ### Sentinel Analytics Rule Created
 
 The break glass account detection query was converted into a Microsoft Sentinel scheduled analytics rule.
 
-<img width="3200" height="1728" alt="07-breakglass-analytics-rule-created" src="https://github.com/user-attachments/assets/e23be87b-1e95-45e2-89be-7e6c67ab481d" />
+<img width="3200" height="1728" alt="06-breakglass-analytics-rule-created" src="https://github.com/user-attachments/assets/0e4b933c-ee5e-4b20-a5a9-35295b194b8b" />
 
 ## KQL Queries
 
