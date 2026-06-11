@@ -1,0 +1,3 @@
+SigninLogs
+| sort by TimeGenerated desc
+| take 20

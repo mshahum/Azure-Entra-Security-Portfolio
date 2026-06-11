@@ -1,0 +1,3 @@
+AuditLogs
+| sort by TimeGenerated
+| take 20
