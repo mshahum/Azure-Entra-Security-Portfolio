@@ -1,0 +1,7 @@
+AzureActivity
+| where TimeGenerated > ago(24h)
+| where OperationNameValue =~ "MICROSOFT.AUTHORIZATION/ROLEASSIGNMENTS/WRITE"
+| sort by TimeGenerated desc
+| Project
+TimeGenerated, Caller, ActivityStatusValue, ResourceGroup, CorrelationID, OperationNameValue, ResourceProviderValue
+| Take 20

@@ -1,0 +1,15 @@
+AzureActivity
+| where TimeGenerated > ago(24h)
+| where OperationNameValue =~ "MICROSOFT.AUTHORIZATION/ROLEASSIGNMENTS/DELETE"
+| where ResourceGroup =~ "RG-PrivilegedAccess-Investigation-Lab"
+| sort by TimeGenerated desc
+| project
+    TimeGenerated,
+    Caller,
+    OperationNameValue,
+    ActivityStatusValue,
+    ActivitySubstatus = coalesce(ActivitySubstatusValue, "Not provided"),
+    ResourceGroup,
+    ResourceProviderValue,
+    CorrelationId
+| take 20

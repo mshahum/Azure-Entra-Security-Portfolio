@@ -1,0 +1,14 @@
+AzureActivity
+| where TimeGenerated > ago(24h)
+| where CorrelationID == "paste your Correlation ID here"
+| sort by TimeGenerated asc
+| extend ActivitySubStatusValue = coalesce(ActivitySubStatusValue, "Not Provided")
+| project
+TimeGenerated,
+Caller,
+OperationNameValue,
+ActivityStatusValue,
+ActivitySubStatusValue,
+ResourceGroup,
+ResourceProvider,
+CorrelationID

@@ -1,0 +1,17 @@
+let AssignmentTime = datetime('2026-06-08T19:10:02.581773Z');
+let AssignedUser = ("helpdeskuser@cloudsec66.onmicrosoft.com");
+AzureActivity
+| where TimeGenerated > AssignmentTime
+| where ResourceGroup =~ "RG-PrivilegedAccess-Investigation-Lab"
+| where Caller =~ AssignedUser
+| sort by TimeGenerated asc
+| extend ActivitySubstatus = coalesce(ActivitySubstatusValue, "Not provided")
+| project
+    TimeGenerated,
+    Caller,
+    OperationNameValue,
+    ActivityStatusValue,
+    ActivitySubstatus,
+    ResourceGroup,
+    ResourceProviderValue,
+    CorrelationId
